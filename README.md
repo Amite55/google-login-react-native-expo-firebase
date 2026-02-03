@@ -1,50 +1,41 @@
-# Welcome to your Expo app 👋
+## Welcome Google login test project in firebase and react native expo👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+#### Google login doc
 
-## Get started
+when you can use bun/npm install three package
 
-1. Install dependencies
+. @react-native-firebase/app,
+. @react-native-google-signin/google-signin
+. @react-native-firebase/auth
 
-   ```bash
-   npm install
-   ```
+After install this package next level setup firebase create new project and add SHA1 key and SHA256. Now download google-services.json file and add project root folder. And add to path app.json file "googleServicesFile": "./google-services.json"
 
-2. Start the app
+Firebase Link : https://console.firebase.google.com/u/0/?fb_gclid=CjwKCAiAs4HMBhBJEiwACrfNZaTwZod_wYjThpIaauWJ8vFFFN2qX3gNvuvSzy7I6Q2mgsSDsRCLCxoCIN8QAvD_BwE&fb_utm_campaign=Cloud-SS-DR-Firebase-FY26-global-gsem-1713590&fb_utm_content=text-ad&fb_utm_medium=cpc&fb_utm_source=google&fb_utm_term=KW_firebase%20console
 
-   ```bash
-   npx expo start
-   ```
+then google-services.json file get client_id "client_type": 3 .
 
-In the output, you'll find options to open the app in a
+and add
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+webClientId:
+"360168285758-aejh9u9omdksqvmd4g343ltgc1tm0aam.apps.googleusercontent.com",
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+<!-- "client_type": 3 -->
 
-## Get a fresh project
+ <!-- =========================== how can you get your SHA1 and SHA256 ========================== -->
 
-When you're ready, run:
+    When this project run to local you can get you project android file
 
-```bash
-npm run reset-project
-```
+    cd android
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+./gradlew signingReport
 
-## Learn more
+or your local computer SHA1 key :
+command : keytool -list -v -keystore %USERPROFILE%\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
 
-To learn more about developing your project with Expo, look at the following resources:
+local SHA1 SHA256 get key Doc link : https://rnfirebase.io/
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+and when this project deployment or build add your expo dashboard app credential and Build Credentials see all eas build key and credentials
 
-## Join the community
+then run project :
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Doc: https://react-native-google-signin.github.io/
